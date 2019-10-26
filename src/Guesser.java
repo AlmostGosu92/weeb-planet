@@ -23,6 +23,10 @@ public class Guesser{
    */
   
   // Write the constructor below this line.
+  private Guesser(int low, int high) {
+	  this.low = low;
+	  this.high = high;
+  }
 
 
   /*
@@ -32,7 +36,9 @@ public class Guesser{
    */
   public void start(){
     // call the rules method here
+	  this.rules();
     // call the doGuesses() method here
+	  this.doGuesses();
   }
 
   private void rules(){
@@ -54,12 +60,16 @@ public class Guesser{
    * the player.
    */
   private String getReply(){
-    String reply = null;
+    String reply = System.console().readLine();
+    if (reply == "T" || reply == "F") {
+    	return reply;
+    } else
+    	System.out.println("Incorrect input");
+    getReply();
     // Write code here which reads a String from the console.
     // As long as it is not a valid reply (one of "T" and "F")
     // write an error message, and read a new reply.
     // When you have gotten a valid reply, return it.
-    return reply;
   }
 
   private void doGuesses(){
