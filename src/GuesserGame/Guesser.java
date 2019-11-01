@@ -11,7 +11,7 @@ import java.io.Console;
 public class Guesser{
   private int low;
   private int high;
-
+	  
   /*
    * Task 1. Write code here for a constructor
    * which takes two int arguments and saves
@@ -64,9 +64,10 @@ public class Guesser{
     String reply = System.console().readLine();
     if (reply == "T" || reply == "F") {
     	return reply;
-    } else
+    }else
     	System.out.println("Incorrect input");
-    getReply();
+    	return getReply();
+    	
     // Write code here which reads a String from the console.
     // As long as it is not a valid reply (one of "T" and "F")
     // write an error message, and read a new reply.
